@@ -1,0 +1,603 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar a:not(:last-child)::after {
+    content: " | ";
+    color: black; /* Cor do separador */
+    margin-left: 10px;
+}
+
+.inscricao-button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    background-color: #0d3515;
+    background-image: url('./home/cabeçalho.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+    z-index: 2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2{
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.botao-inscricao {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* Seção de Testemunhos */
+.testemunhos {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+    color: black;
+}
+
+.testemunhos h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Container principal */
+.testemunhos {
+    background-color: #e7e7e7;
+    padding: 40px 20px;
+    text-align: center;
+    color: black;
+    position: relative; /* Mantém referência para os botões */
+}
+
+/* Título da seção */
+.testemunhos h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Container dos cards */
+.testemunho-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 940px;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+/* Wrapper para os cards */
+.testemunho-wrapper {
+    display: flex;
+    justify-content: flex-start; /* Garante que o primeiro card apareça corretamente */
+    transition: transform 0.5s ease-in-out;
+    padding-left: 33%; /* Pequeno ajuste para evitar corte do primeiro card */
+    gap: 20px;
+    
+}
+
+/* Card de Testemunho */
+.testemunho-card {
+    flex: 0 0 calc(22% - 20px); /* Mantém três cards visíveis */
+    max-width: 280px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testemunho-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Foto do Testemunho */
+.testemunho-foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Nome do Testemunho */
+.testemunho-nome {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Texto do Testemunho */
+.testemunho-texto {
+    font-size: 1em;
+    color: #000000;
+    text-align: justify;
+    
+}
+
+/* Botões de Navegação */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    top: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 0.8;
+    z-index: 10; /* Garante que fique acima dos cards */
+}
+
+/* Posicionamento das setas FORA do container dos cards, mas dentro da seção */
+.seta-esquerda {
+    left: 130px;
+}
+
+.seta-direita {
+    right: 130px;
+}
+
+.seta:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+/* Contagem regressiva */
+.countdown {
+    display: flex;
+    justify-content: center;
+    background-color: #8d1717;
+    padding: 20px 0;
+    border-top: black solid;
+    border-bottom: black solid;
+}
+
+.countdown div {
+    margin: 0 10px;
+    text-align: center;
+    color: white;
+}
+
+.countdown span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: white;
+    padding: 5px 5px;
+    color: black;
+    width: 550px;
+    height: auto; 
+    text-align: justify;
+    text-indent: 0px;
+    margin: auto;
+    border-bottom: black solid;
+}
+
+.sobre-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-container::before,
+.sobre-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 225px; /* Ajuste conforme necessário */
+    height: 100%;
+    background: url('./home/coração.jpg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.5; /* Ajuste para controlar a visibilidade */
+    z-index: -1;
+}
+
+.sobre-container::before {
+    left: 0;
+}
+
+.sobre-container::after {
+    right: 0;
+}
+
+.sobre h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.video-container h2{
+    font-size: 2.0em;
+    margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+    background-color: #f7f7f7; /* Cor de fundo (pode ser alterada) */
+    padding-top: 10px; /* Espaçamento ao redor do carrossel */
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center; /* Centraliza o carrossel dentro do fundo */
+    margin-top: 20px;
+    border-width: 10px;
+    border-bottom: black solid;
+    border-top: black solid;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-container img {
+    width: 25%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.carousel h3 {
+    font-size: 2.0em;
+    margin-bottom: 30px;
+}
+/* Mapa */
+.map-container {
+    width: 50vw;
+    max-width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-container h3{
+    font-size: 2.0em;
+    margin-bottom: 30px;
+}
+
+/* Botão de contato */
+.contact-button {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #23cf3a;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.paroquia {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #08220d;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+    font-family: "Apple Chancery, cursive";
+    font-size: 30px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #25d366;
+}
+
+.social-icon-facebook{
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon-facebook:hover{
+    color: rgb(0, 102, 255);
+}
+
+.social-icon-instagram{
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon-instagram:hover{
+    color: rgb(192, 88, 192);
+}
+
+/* Responsivo para mobile e tablet */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar a:not(:last-child)::after {
+        content: " | ";
+        color: black; /* Cor do separador */
+        margin-left: 0;
+    }
+
+    .inscricao-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 60px 10px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .testemunho-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .testemunho-card {
+        flex: 1 0 100%;
+        max-width: 90%;
+        margin: 10px 0;
+        min-height: 300px;
+    }
+    .testemunho-texto {
+        font-size: 1em;
+        color: #000000;
+        text-align: justify;
+        word-break: break-word; /* quebra palavras muito grandes */
+        overflow-wrap: break-word; /* compatibilidade extra */
+        margin: 0; /* remove margens que possam ultrapassar */
+      }
+
+    .seta {
+        display: none; /* Esconde setas em dispositivos menores */
+    }
+
+    .sobre {
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+    .sobre-container::before,
+    .sobre-container::after {
+        display: none;
+    }
+
+    .carousel-container img {
+        width: 100%; /* Mostra uma imagem por vez */
+    }
+
+    .map-container {
+        width: 90vw;
+        height: 300px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .social-icons {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .video-container {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border: none;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            width: 100vw;
+            padding: 10px 0; /* Remove padding lateral */
+            box-sizing: border-box;
+            scroll-padding-left: 0; /* Garante que o primeiro card comece do lado esquerdo */
+            gap: 0; /* Remove espaçamento entre os cards */
+        }
+    
+        .testemunho-card {
+            flex: 0 0 80%;
+            min-width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden; /* Garante que nada ultrapasse */
+            height: auto; /* Permite crescimento conforme o conteúdo */
+        }
+    
+        /* Garante que o primeiro card fique colado no início */
+        .testemunho-card:first-child {
+            margin-left: 0 !important;
+        }
+    
+        .testemunho-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    
+        .testemunho-texto {
+            font-size: 1em;
+            color: #000;
+            text-align: justify;
+            word-break: break-word; /* Garante quebra de palavra */
+            overflow-wrap: break-word; /* Evita estouro lateral */
+            white-space: normal; /* Permite múltiplas linhas */
+            width: 40%; /* Mantém o texto dentro do card */
+            max-width: 50%; /* Evita ultrapassar as bordas */
+            padding: 10px; /* Dá espaço interno */
+            line-height: 1.5; /* Melhora a legibilidade */
+            overflow: hidden; /* Impede que o texto transborde */
+            margin-left: 7%;
+            
+        }
+    
+        .seta {
+            display: none;
+        }
+    }
+    
+}    
